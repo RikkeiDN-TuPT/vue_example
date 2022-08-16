@@ -1,11 +1,16 @@
 <!-- @format -->
 <script setup lang="ts">
+  import { image_background } from "@/utils/constants";
+  import { onMounted } from "vue";
   const onClick = () => {
     console.log("click");
   };
 </script>
 <template>
-  <div class="container">
+  <div
+    class="container"
+    v-bind:style="{ backgroundImage: `url(${image_background})` }"
+  >
     <div class="form">
       <div class="from-top">
         <p id="txtTitle"><span id="txtYou">You</span>topia</p>
@@ -32,11 +37,13 @@
     flex-direction: column;
     min-height: 100vh;
     justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .form {
     width: 25vw;
     height: 30vw;
-    background-color: wheat;
+    background-color: white;
     align-self: center;
     border-radius: 1vw;
     flex-direction: column;
@@ -76,15 +83,19 @@
     margin: 0px 15px 0px 15px;
   }
   .btnGoogle {
-    width: 85%;
+    width: 70%;
     height: 50px;
-    border-color: black;
-    border-radius: 1rem;
-    border-width: 1px;
+    border-color: gray;
+    border-radius: 1.5rem;
+    border-width: 2px;
     border-style: solid;
     align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .txtLoginWithGoogle {
+    color: gray;
+    font-weight: bold;
   }
 </style>
